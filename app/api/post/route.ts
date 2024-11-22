@@ -4,6 +4,7 @@ import prisma from "../../../lib/prismaClient";
 
 export async function GET(req: Request) {
 	const allBBSPost = await prisma.post.findMany();
+	console.log(allBBSPost);
 	return NextResponse.json(allBBSPost);
 }
 

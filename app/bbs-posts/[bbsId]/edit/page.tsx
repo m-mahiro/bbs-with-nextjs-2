@@ -15,7 +15,7 @@ import { getDetailBBSData } from '../page'
 
 
 const CreateBBSPage = ({ params }: { params: { bbsId: number } }) => {
-	const { bbsId } = params;
+	const bbsId = React.use(params.bbsId);
 
 
 	const form = useForm({
@@ -39,7 +39,7 @@ const CreateBBSPage = ({ params }: { params: { bbsId: number } }) => {
 
 	async function onSubmit(value: z.infer<typeof formSchema>) {
 		const { username, title, content } = value;
-		updateBBS({ username, title, content },bbsId);
+		updateBBS({ username, title, content }, bbsId);
 	}
 
 

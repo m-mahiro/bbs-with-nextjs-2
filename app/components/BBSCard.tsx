@@ -1,6 +1,6 @@
 import React from 'react'
 import { cn } from "@/lib/utils";
-import { BellRing, Car, Check } from "lucide-react"
+import { BellRing, Car, Check } from "lucide-react";
 import {
   Card,
   CardContent,
