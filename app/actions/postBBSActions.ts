@@ -29,7 +29,7 @@ export const updateBBS = async ({
 		title, 
 		content
 	}: z.infer<typeof formSchema>,
-	bbsId: number
+	bbsId: string
 ) => {
 	await prisma.post.update({
 		data: {
@@ -38,7 +38,7 @@ export const updateBBS = async ({
 			content,
 		},
 		where: {
-			id: bbsId
+			id: parseInt(bbsId)
 		}
 	})
 
