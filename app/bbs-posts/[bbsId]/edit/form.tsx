@@ -28,13 +28,10 @@ const EditionForm = (props:{bbsId:number}) => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const { username, title, content } = await getDetailBBSData(bbsId);
-			// Update the form's default values after data fetching
 	
-	
+			// Update the form's default values after data fetching	
 			form.reset({ username, title, content });
-	
-	
-	
+
 		};
 		fetchData();
 	},
@@ -99,9 +96,7 @@ const EditionForm = (props:{bbsId:number}) => {
 				<Button type="submit">Update</Button>
 			</form>
 		</FormProvider>
-	)
-	
+	)	
 }
-
 
 export default EditionForm;

@@ -1,6 +1,8 @@
+'use client'
+
 import React from 'react'
 import { cn } from "@/lib/utils";
-import { BellRing, Car, Check } from "lucide-react";
+import { BellRing, Car, Check, Trash } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -11,6 +13,8 @@ import {
 } from "@/components/ui/card"
 import Link from "next/link";
 import { BBSData } from '../types/types';
+import { deleteBBS } from '../actions/postBBSActions';
+import { Button } from '@/components/ui/button';
 
 type CardProps = React.ComponentProps<typeof Card>
 
@@ -21,6 +25,10 @@ interface BBSDataProp {
 const BBSCard = ({bbsData}:BBSDataProp) => {
   const { id, title, content, createdAt, username } = bbsData;
 
+  const deleteCard = () => {
+    deleteBBS(id.toString())
+  }
+
 	return (
 		<div>
 			<Card>
@@ -29,6 +37,9 @@ const BBSCard = ({bbsData}:BBSDataProp) => {
           <CardDescription>
             {username}
           </CardDescription>
+          <Button onClick={deleteCard} className='h-8 w-8 bg-grey-500'>
+          <Trash className='h-5 w-5 text-red-500' />
+          </Button>
         </CardHeader>
         <CardContent>
           {content}
