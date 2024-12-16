@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import React from 'react'
 
@@ -23,12 +24,10 @@ const Header = () => {
             >
               About
             </Link>
-            <Link
-              className="bg-black py-3 px-4 text-white rounded-md font-medium"
-              href="/bbs-posts/create"
-            >
-              Create Post
-            </Link>
+
+            <Button className="bg-black py-3 px-4 text-white rounded-md font-medium">
+              <Link href="/bbs-posts/create">Create Post</Link>
+            </Button>
           </nav>
         </div>
       </div>

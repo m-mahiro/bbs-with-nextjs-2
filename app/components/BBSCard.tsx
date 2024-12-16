@@ -30,7 +30,7 @@ const BBSCard = ({bbsData}:BBSDataProp) => {
   }
 
 	return (
-		<div>
+		<div className='mr-2 ml-2 mb-2 mt-2'>
 			<Card>
         <CardHeader>
           <CardTitle>{title}</CardTitle>
@@ -38,7 +38,7 @@ const BBSCard = ({bbsData}:BBSDataProp) => {
             {username}
           </CardDescription>
           <Button onClick={deleteCard} className='h-8 w-8 bg-grey-500'>
-          <Trash className='h-5 w-5 text-red-500' />
+            <Trash className='h-5 w-5 text-red-500' />
           </Button>
         </CardHeader>
         <CardContent>

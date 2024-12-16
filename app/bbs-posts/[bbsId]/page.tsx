@@ -1,4 +1,7 @@
+'use server'
+
 import { BBSData } from '@/app/types/types';
+import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import React from 'react'
 
@@ -33,12 +36,16 @@ const BBSDetailPage = async ({ params }: { params: { bbsId: number } }) => {
 				<p className='text-gray-900'>{content}</p>
 			</div>
 
-			<Link href = {"/"} className="bg-blue-500 text-white font-bold py-2 px-4 rounded-md">
-				戻る
-			</Link>
-			<Link href = {`/bbs-posts/${bbsId}/edit`} className='bg-green-500 text-white font-bold py-2 px-4 rounded-md ml-4'>
-				編集
-			</Link>
+			<Button className='bg-blue-500 py-2 px-4'>
+				<Link href = {"/"} className=" text-white font-bold  rounded-md">
+					戻る
+				</Link>
+			</Button>
+			<Button className='bg-green-500 py-2 px-4 rounded-md ml-4'>
+				<Link href = {`/bbs-posts/${bbsId}/edit`} className=' text-white font-bold '>
+					編集
+				</Link>
+			</Button>
 		</div>
 	)
 }

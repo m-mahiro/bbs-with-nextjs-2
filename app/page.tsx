@@ -12,6 +12,8 @@ export async function getBBSAllData()   {
   const bbsAllData : BBSData[] = await response.json();
   console.log(bbsAllData);
 
+  // bbsAllData.sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime())
+
   return bbsAllData;
 }
 
